@@ -6,9 +6,14 @@ export const queries = {
             getAllDebriefs {
                 id
                 title
+                labels
                 date
                 metaData {
-                    createdBy
+                  createdBy
+                }
+                lessons {
+                  cluster
+                  id
                 }
             }
         }`,
@@ -17,6 +22,7 @@ export const queries = {
         query debriefs($id: ID!) {
           debriefs(input: {id: $id}) {
             id
+            labels
             contentItems {
               ... on Table {
                 id
@@ -52,9 +58,11 @@ export const queries = {
             lessons {
               content
               id
+              cluster
               tasks {
                 content
                 deadline
+                completed
                 id
                 startDate
                 user {

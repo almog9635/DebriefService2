@@ -7,6 +7,7 @@ export interface DebriefInput {
     id?: string;
     title: string;
     contentItems: ContentInput;
+    labels: string;
     date: ZonedDateTime;
     lessons: Array<LessonInput>;
     tasks: Array<TaskInput>;

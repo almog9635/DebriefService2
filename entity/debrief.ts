@@ -6,6 +6,7 @@ import { Task } from "./task.ts";
 export interface Debrief{
     id: string;
     title: string;
+    labels: string;
     date: ZonedDateTime;
     createdBy: string;
     updatedBy: string;

@@ -4,4 +4,5 @@ export interface LessonInput {
     id?: string;
     content: string;
     tasks: Array<TaskInput>;
+    cluster: string;
 }

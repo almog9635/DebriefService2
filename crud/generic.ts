@@ -38,7 +38,6 @@ export class BaseService<T, D>{
     public async handleGetAll(query: string): Promise<D[]>{
 
         const data = await fetchGraphQL<D[]>(query);
-        logger.info("Fetched all: ", data);
 
         return data;
     }
@@ -46,7 +45,6 @@ export class BaseService<T, D>{
     public async handleGetById(id : string, query : string): Promise<D>{
         
         const data = await fetchGraphQL<D>(query, {id : id});
-        logger.info("Fetched: ", data);
 
         return data;
     }

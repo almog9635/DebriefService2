@@ -1,6 +1,6 @@
 import { Context, Router } from "@oak/oak";
 import { logger } from "../consts.ts";
-import { createDebrief, deleteDebrief, getAllDebriefs, getDebriefById} from "../crud/debrief/debrief.ts";
+import { createDebrief, deleteDebrief, getAllDebriefs, getDebriefById, updateDebrief} from "../crud/debrief/debrief.ts";
 
 export const debriefRouter = new Router();
 debriefRouter
@@ -40,7 +40,7 @@ debriefRouter
     .put("/debrief/:id", async (ctx: Context) => {
         logger.info("Updating debrief...");
         try{
-            ctx.response.body = await createDebrief(ctx.request);
+            ctx.response.body = await updateDebrief(ctx.request);
             ctx.response.status = 200;
         } catch (error) {
             logger.error("Error updating debrief: ", error);

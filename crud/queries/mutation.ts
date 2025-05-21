@@ -1,4 +1,5 @@
 import { gql } from "npm:graphql-request";
+import { completeTask } from "../task/task.ts";
 
 export const mutations = {
     createDebrief: gql`
@@ -20,4 +21,13 @@ export const mutations = {
             deleteDebrief(id: $id) 
         }
     `,
+    updateTask: gql`
+        mutation updateTask($input: TaskInput!) {
+            updateTask(input: $input) {
+                id
+                completed
+            }
+        }
+    `,
+    
 }
